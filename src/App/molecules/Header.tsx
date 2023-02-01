@@ -7,7 +7,12 @@ export const Header = () => {
     display: flex;
     height: 100px;
     width: 100%;
-    background: linear-gradient(90deg, rgba(214,212,236,1) 0%, rgba(115,115,255,1) 35%, rgba(0,78,255,1) 100%);
+    background: linear-gradient(
+      90deg,
+      rgba(214, 212, 236, 1) 0%,
+      rgba(115, 115, 255, 1) 35%,
+      rgba(0, 78, 255, 1) 100%
+    );
     align-items: center;
     justify-content: space-between;
     padding-left: 1rem;
@@ -21,6 +26,15 @@ export const Header = () => {
   const StyledHeaderLogo = styled.div`
     display: flex;
     align-items: center;
+    gap: 1rem;
+  `;
+
+  const StyeldTransitionTab = styled.div`
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   `;
 
   return (
@@ -34,9 +48,9 @@ export const Header = () => {
         <div>HampAthletics</div>
       </StyledHeaderLogo>
       <StyledHeaderTabs>
-        <div>Workout Plans</div>
-        <div>Contact Info</div>
-        <div>Schedule Consulation</div>
+        <StyeldTransitionTab>Workout Plans</StyeldTransitionTab>
+        <StyeldTransitionTab>Contact Info</StyeldTransitionTab>
+        <StyeldTransitionTab>Schedule Consulation</StyeldTransitionTab>
       </StyledHeaderTabs>
     </StyledHeader>
   );
